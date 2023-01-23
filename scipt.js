@@ -1,34 +1,31 @@
-var start = document.querySelector("start");
-var quiz = document.querySelector("quiz");
-var question = document.querySelector("question");
-var qImg = document.querySelector("qImg");
-var choiceA = document.querySelector("A");
-var choiceB = document.querySelector("B");
-var choiceC = document.querySelector("C");
-var counter = document.querySelector("counter");
-var timeGauge = document.querySelector("timeGauge");
-var progress = document.querySelector("progress");
-var scoreDiv = document.querySelector("scoreContainer");
+var start = document.querySelector("#start");
+var quiz = document.querySelector("#quiz");
+var question = document.querySelector("#question");
+var qImg = document.querySelector("#qImg");
+var choiceA = document.querySelector("#A");
+var choiceB = document.querySelector("#B");
+var choiceC = document.querySelector("#C");
+var counter = document.querySelector("#counter");
+var timeGauge = document.querySelector("#timeGauge");
+var progress = document.querySelector("#progress");
+var scoreDiv = document.querySelector("#scoreContainer");
 
 
 let questions = [
     {
         question : "What is the code for the largest text  for a h tag?",
-        imgSrc : "img/html.png",
         choiceA : "h1",
         choiceB : "h3",
         choiceC : "h6",
         correct : "A"
     },{
         question : "What does CSS stand for?",
-        imgSrc : "img/css.png",
         choiceA : "car is silver ",
         choiceB : "Cascading Style Sheets",
         choiceC : "Sheets Style Cascading",
         correct : "B"
     },{
         question : "What does JS stand for?",
-        imgSrc : "img/js.png",
         choiceA : "just sayin",
         choiceB : "a ",
         choiceC : "JavaScript",
@@ -53,7 +50,6 @@ function renderQuestion(){
     let q = questions[runningQuestion];
     
     question.innerHTML = "<p>"+ q.question +"</p>";
-    qImg.innerHTML = "<img src="+ q.imgSrc +">";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
@@ -139,21 +135,5 @@ function scoreRender(){
     scoreDiv.style.display = "block";
     
     // calculate the amount of question percent answered by the user
-    var scorePerCent = Math.round(100 * score/questions.length);
-    
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" :
-              "img/1.png";
-    
-    scoreDiv.innerHTML = "<img src="+ img +">";
-    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+    var scorePer = Math.round(100 * score/questions.length);
 }
-
-
-
-
-
-
