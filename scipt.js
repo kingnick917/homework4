@@ -10,7 +10,7 @@ var timeGauge = document.querySelector("timeGauge");
 var progress = document.querySelector("progress");
 var scoreDiv = document.querySelector("scoreContainer");
 
-// create our questions
+
 let questions = [
     {
         question : "What is the code for the largest text  for a h tag?",
